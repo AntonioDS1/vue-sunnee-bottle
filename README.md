@@ -2,46 +2,49 @@
 
 <!-- PROJECT SHIELDS -->
 
-![Stars](https://img.shields.io/github/stars/AntonioDS1/vue-tictactoe?style=for-the-badge)
-![Forks](https://img.shields.io/github/forks/AntonioDS1/vue-tictactoe?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/AntonioDS1/vue-tictactoe?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/AntonioDS1/vue-sunnee-bottle?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/AntonioDS1/vue-sunnee-bottle?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/AntonioDS1/vue-sunnee-bottle?style=for-the-badge)
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/AntonioDS1/vue-tictactoe">
-    <img src="public/og-image.png" alt="TicTacToe Logo" width="160">
+  <a href="https://github.com/AntonioDS1/vue-sunnee-bottle">
+    <img src="public/favicon.ico" alt="Sunnee Bottle Logo" width="160">
   </a>
 
-  <h3 align="center">TicTacToe</h3>
+  <h3 align="center">Sunnee Bottle Configurator</h3>
 
   <p align="center">
-    Un TicTacToe minimalista con effetti visivi e sonori, sfondo video animato e modalità multigiocatore.
-    Costruito con Vue 3, Vite e Tailwind CSS.
+    Configuratore interattivo di bottiglie con anteprima live, personalizzazione colori e UI moderna.
+    Costruito con Vue 3, Vue Router e Composition API.
     <br />
-    <a href="https://github.com/AntonioDS1/vue-tictactoe"><strong>Visita la repository »</strong></a>
+    <a href="https://github.com/AntonioDS1/vue-sunnee-bottle"><strong>Visita la repository »</strong></a>
+    <br />
+    <a href="https://vue-sunnee-bottle-two.vercel.app/"><strong>Visita la demo »</strong></a>
     <br /><br />
-    <a href="https://github.com/AntonioDS1/vue-tictactoe/issues">Segnala un Bug</a>
+    <a href="https://github.com/AntonioDS1/vue-sunnee-bottle/issues">Segnala un Bug</a>
     ·
-    <a href="https://github.com/AntonioDS1/vue-tictactoe/issues">Richiedi una Feature</a>
+    <a href="https://github.com/AntonioDS1/vue-sunnee-bottle/issues">Richiedi una Feature</a>
   </p>
 </div>
 
 ---
 
-## 🎮 Overview
+## 🌊 Overview
 
 ![Screenshot](public/og-image.png)
 
-**TicTacToe** è un'applicazione web moderna che porta il classico gioco del tris a un livello superiore, con un'interfaccia coinvolgente, effetti sonori, sfondo video animato e feedback visivi per ogni mossa.
+**Sunnee Bottle Configurator** è un'applicazione web moderna che permette agli utenti di personalizzare una bottiglia scegliendo colori differenti per tappo, corpo e fondo, con aggiornamento live dell’anteprima.
 
-Il progetto si concentra su:
-- architettura Vue 3 modulare con Composition API
-- gestione dello stato con `provide` / `inject`
-- routing client-side con Vue Router
-- UI reattiva e animata
+Il progetto è stato sviluppato con un focus su:
+- architettura Vue 3 modulare
+- gestione dello stato globale con `provide` / `inject`
+- rendering dinamico dei componenti
+- esperienza utente immersiva
+- design moderno e responsive
 
-Pensato come **progetto frontend di portfolio**, non solo come demo.
+Pensato come **progetto frontend portfolio**, con particolare attenzione a UX/UI e component architecture.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -49,29 +52,80 @@ Pensato come **progetto frontend di portfolio**, non solo come demo.
 
 ## ✨ Funzionalità principali
 
-### 🔹 1. Partita Multigiocatore
-Due giocatori si alternano sullo stesso dispositivo, con rilevamento automatico della vittoria e del pareggio.
+### 🔹 1. Configurazione Interattiva
+L’utente può personalizzare:
+- tappo
+- corpo
+- fondo
 
-### 🔹 2. Effetti Visivi per ogni Mossa
-Ogni simbolo O e X viene rappresentato da una GIF animata unica, per un'esperienza visiva immersiva.
+della bottiglia in maniera semplice e intuitiva.
 
-### 🔹 3. Effetti Sonori
-Ogni mossa riproduce un suono dedicato per O e per X, con audio di sottofondo in loop.
+---
 
-### 🔹 4. Sfondo Video Animato
-Un video in loop come sfondo per un'atmosfera coinvolgente fin dal primo avvio.
+### 🔹 2. Anteprima Live Dinamica
+Ogni modifica aggiorna immediatamente la preview della bottiglia grazie alla reattività di Vue 3.
 
-### 🔹 5. Punteggio Persistente per Sessione
-Il tabellone tiene traccia dei punti di O, X e dei pareggi per tutta la sessione di gioco.
+---
 
-### 🔹 6. Double Tris
-Rilevamento del caso speciale in cui un giocatore completa due tris nella stessa partita.
+### 🔹 3. Sistema Colori Avanzato
+Utilizzo di:
+- HEX colors
+- CSS filters
+- `hue-rotate()`
+- `grayscale()`
+- `brightness()`
 
-### 🔹 7. Architettura Vue 3 Modulare
-Componenti separati e riutilizzabili (`Casella`, `Griglia`, `Bottone`, `StartScreen`) con stato condiviso via `provide` / `inject`.
+per simulare molteplici varianti senza duplicare immagini.
 
-### 🔹 8. Routing Client-Side
-Navigazione fluida tra schermata iniziale e griglia di gioco tramite Vue Router.
+---
+
+### 🔹 4. Navigazione Multi-Step
+Configurazione guidata step-by-step:
+1. Tappo
+2. Corpo
+3. Fondo
+4. Schermata finale
+
+---
+
+### 🔹 5. Architettura Vue 3 Modulare
+Componenti separati e riutilizzabili:
+- `PreviewTappo`
+- `PreviewCorpo`
+- `PreviewFondo`
+- `CurrentPreview`
+- `BottleSelector`
+
+---
+
+### 🔹 6. Gestione Stato Globale
+Lo stato della bottiglia viene condiviso tramite:
+```js
+provide()
+inject()
+```
+
+senza necessità di librerie esterne.
+
+---
+
+### 🔹 7. Routing Client-Side
+Navigazione fluida tramite Vue Router:
+- Welcome page
+- Configurator
+- Thank you page
+
+senza refresh della pagina.
+
+---
+
+### 🔹 8. UI Moderna e Responsive
+Interfaccia moderna con:
+- glow effects
+- cards animate
+- gradients
+- layout responsive
+- UX immersiva
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,13 +133,14 @@ Navigazione fluida tra schermata iniziale e griglia di gioco tramite Vue Router.
 
 ## 🛠️ Built With
 
-- **Vue 3** (Composition API)
-- **Vite**
+- **Vue 3**
+- **Composition API**
 - **Vue Router**
-- **Tailwind CSS**
+- **Vite**
 - **JavaScript (ES6+)**
 - **HTML5 / CSS3**
-- **Google Fonts (Nunito)**
+- **Reactive State**
+- **Provide / Inject**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,8 +151,10 @@ Navigazione fluida tra schermata iniziale e griglia di gioco tramite Vue Router.
 ### 1️⃣ Clona la repository
 
 ```bash
-git clone https://github.com/AntonioDS1/vue-tictactoe.git
+git clone https://github.com/AntonioDS1/vue-sunnee-bottle.git
 ```
+
+---
 
 ### 2️⃣ Installa le dipendenze
 
@@ -105,11 +162,15 @@ git clone https://github.com/AntonioDS1/vue-tictactoe.git
 npm install
 ```
 
-### 3️⃣ Avvia in locale
+---
+
+### 3️⃣ Avvia il progetto in locale
 
 ```bash
 npm run dev
 ```
+
+---
 
 ### 4️⃣ Build per la produzione
 
@@ -123,21 +184,107 @@ npm run build
 
 ## 📁 Struttura del progetto
 
-```
+```bash
 src/
 ├── assets/
-│   ├── Audio/         # Effetti sonori e audio di sottofondo
-│   └── images/        # GIF simboli e video di sfondo
+│   ├── images/              # Asset immagini bottiglia
+│   └── vite.svg
+│
 ├── components/
-│   ├── Bottone/       # Bottone riutilizzabile (restart / back)
-│   ├── Casella/       # Singola cella della griglia
-│   ├── Griglia/       # Logica di gioco e layout griglia
-│   └── StartScreen/   # Schermata iniziale con selezione modalità
+│   ├── CurrentPreview/      # Rendering preview dinamica
+│   ├── Header/              # Navbar / Header
+│   ├── HeroCard/            # Card showcase
+│   ├── HeroCards/           # Container cards
+│   ├── PreviewCorpo/        # Preview corpo bottiglia
+│   ├── PreviewFondo/        # Preview fondo bottiglia
+│   └── PreviewTappo/        # Preview tappo bottiglia
+│
 ├── router/
-│   └── index.js       # Configurazione Vue Router
+│   └── index.js             # Configurazione Vue Router
+│
+├── views/
+│   ├── BottleSelector/      # Logica configuratore
+│   ├── Hero/                # Hero section
+│   ├── HomeView/            # Pagina configuratore
+│   ├── ThankView/           # Schermata finale
+│   └── WelcomeView/         # Landing iniziale
+│
 ├── App.vue
-└── main.js
+├── main.js
+└── style.css
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 🧠 Architettura dell'applicazione
+
+### 🔹 Stato Globale
+
+La bottiglia viene gestita tramite un oggetto reattivo:
+
+```js
+const bottle = reactive({
+  Tappo: 'rosso',
+  Corpo: 'rosso',
+  Fondo: 'rosso',
+})
+```
+
+---
+
+### 🔹 Provide / Inject
+
+Condivisione globale dello stato:
+
+```js
+provide('bottle', bottle)
+```
+
+e recupero nei componenti figli:
+
+```js
+const bottle = inject("bottle")
+```
+
+---
+
+### 🔹 Dynamic Components
+
+Rendering dinamico delle preview:
+
+```js
+<component :is="currentComponent" />
+```
+
+---
+
+### 🔹 Computed Properties
+
+Aggiornamento automatico della UI:
+
+```js
+const currentColor = computed(() =>
+  colors.value.find(c => c.id === selectedColor.value)
+)
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 🎨 UX/UI Features
+
+- Configuratore step-by-step
+- Glow backgrounds
+- Live bottle rendering
+- Responsive layout
+- Microinterazioni
+- Preview real-time
+- Floating badges
+- Hero section moderna
+- Dark UI
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,25 +292,39 @@ src/
 
 ## 🌐 Repository
 
-🔹 **GitHub**
+### 🔹 GitHub
 
-
-👉 [https://github.com/AntonioDS1/vue-tictactoe](https://github.com/AntonioDS1/vue-tictactoe)
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+👉 https://github.com/AntonioDS1/vue-sunnee-bottle
 
 ---
 
+### 🔹 Live Demo (Vercel)
+
+👉 https://vue-sunnee-bottle-two.vercel.app/
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
 
 ## 📬 Contatti
 
+### Antonio De Siena
 
-**Antonio De Siena**
-
-
-GitHub: 👉 [https://github.com/AntonioDS1](https://github.com/AntonioDS1)
-
+GitHub: 👉 https://github.com/AntonioDS1
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## ⭐ Supporta il progetto
+
+Se il progetto ti è piaciuto:
+- lascia una ⭐ alla repository
+- condividilo
+- prova la demo online
+
+---
+
+## 📄 Licenza
+
+Distribuito sotto licenza MIT.
