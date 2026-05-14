@@ -2,14 +2,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
+
   {
     path: '/',
-    component: () => import('../components/StartScreen/StartScreen.vue')
+    component: () => import('../views/WelcomeView/WelcomeView.vue')
   },
   {
-    path: '/griglia',
-    component: () => import('../components/Griglia/Griglia.vue')
-  }
+    path: '/home',
+    component: () => import('../views/HomeView/HomeView.vue')
+  },
+  {
+    path: '/thank',
+    component: () => import('../views/ThankView/ThankView.vue')
+  },
+
+
 ]
 
 export default createRouter({

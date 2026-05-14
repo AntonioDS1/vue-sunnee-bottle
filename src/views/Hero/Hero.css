@@ -1,0 +1,166 @@
+.hero {
+  position: relative;
+  height: 90vh;
+  padding-bottom: 140px;
+
+  background-image: url('../../assets/images/istockphoto-598250866-2048x2048.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible !important;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.contentHero {
+  position: relative;
+  z-index: 2;
+
+  width: 50rem;
+
+  padding-top: 220px;
+  padding-left: 80px;
+
+  color: white !important;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.05;
+  font-weight: 500;
+
+  margin-bottom: 24px;
+  color: white !important;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+
+  margin-bottom: 40px;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primary,
+.secondary {
+  padding: 16px 28px;
+
+  border-radius: 14px;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.primary {
+  background: #2a7a2a;  /* leggermente più scuro del tuo #228B22 */
+  border: none;
+  color: white;
+}
+
+.primary:hover {
+  background: #1e5e1e;  /* molto meno scuro del tuo #006400 */
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Tablet landscape ── */
+@media (max-width: 1024px) {
+  .contentHero {
+    width: 70%;
+    padding-left: 48px;
+    padding-top: 180px;
+  }
+
+  h1 { font-size: 3.8rem; }
+  p  { font-size: 1.4rem; }
+}
+
+/* ── Tablet portrait ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding-bottom: 320px;
+  }
+
+  .hero-cards {
+    transform: translate(-50%, 60px); /* era 100px */
+  }
+
+  .contentHero {
+    width: 90%;
+    padding-left: 32px;
+    padding-top: 140px;
+  }
+
+  h1 { font-size: 3rem; }
+  p  { font-size: 1.2rem; margin-bottom: 28px; }
+
+  .primary,
+  .secondary {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .hero {
+    padding-bottom: 520px;
+  }
+
+  .contentHero {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 120px;
+  }
+
+  h1 { font-size: 2.4rem; }
+  p  { font-size: 1.1rem; }
+
+  .buttons { flex-direction: column; gap: 12px; }
+
+  .primary,
+  .secondary {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 370px) {
+  .hero { padding-bottom: 560px; }
+
+  .contentHero { padding-left: 16px; padding-right: 16px; }
+
+  h1 { font-size: 2rem; }
+  p  { font-size: 1rem; }
+}

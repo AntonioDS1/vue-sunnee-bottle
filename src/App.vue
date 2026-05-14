@@ -1,33 +1,75 @@
 <script setup>
-import Griglia from './components/Griglia/Griglia.vue';
 
-import { onMounted, ref, provide } from 'vue'
+import { ref, provide, reactive } from 'vue'
+import Hero from './views/Hero/Hero.vue';
 
-const punteggioO = ref(0);
-const punteggioX = ref(0);
-const draw = ref(0);
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
-provide("punteggioO", punteggioO);
-provide("punteggioX", punteggioX);
-provide("draw", draw);
+const router = useRouter()
 
 onMounted(() => {
+  const entries = performance.getEntriesByType('navigation')
 
-  const audio = document.getElementById('bg-audio')
-
-  const startAudio = () => {
-    audio.play()
-    document.removeEventListener('click', startAudio)
-    document.removeEventListener('keydown', startAudio)
+  if (entries.length > 0 && entries[0].type === 'reload') {
+    router.replace('/')
   }
-
-  document.addEventListener('click', startAudio)
-  document.addEventListener('keydown', startAudio)
 })
+
+const bottle = reactive({
+  Tappo: 'rosso',
+  Corpo: 'rosso',
+  Fondo: 'rosso',
+})
+
+provide('bottle', bottle)
+
+const currentSelecting = ref("Tappo");
+provide("currentSelecting", currentSelecting);
+
+const colors = ref([
+  { id: 'rosso',     name: 'Rosso',     hex: '#B92B2B', hue: 'hue-rotate(0deg)' },
+
+  { id: 'arancione', name: 'Arancione', hex: '#D76423', hue: 'hue-rotate(48deg) saturate(1.5) brightness(1.2)' },
+
+  { id: 'giallo',    name: 'Giallo',    hex: '#C8AA10'},
+
+  { id: 'verde',     name: 'Verde',     hex: '#1A8A40', hue: 'hue-rotate(143deg)' },
+
+  { id: 'blu',       name: 'Blu',       hex: '#1A5AAA', hue: 'hue-rotate(214deg)' },
+
+  { id: 'violetto',  name: 'Violetto',  hex: '#7030B0', hue: 'hue-rotate(277deg)' },
+
+  { id: 'grigio',    name: 'Grigio',    hex: '#808080', hue: 'grayscale(100%)' },
+
+  {
+    id: 'marrone',
+    name: 'Marrone',
+    hex: '#8A4015',
+  },
+
+  {
+    id: 'nero',
+    name: 'Nero',
+    hex: '#282828',
+
+  },
+
+  {
+    id: 'bianco',
+    name: 'Bianco',
+    hex: '#E8E8E8',
+
+  },
+])
+
+provide("colors", colors);
 
 </script>
 
 <template>
+
+<Hero />
 
 <RouterView :key="$route.fullPath" />
 
