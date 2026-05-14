@@ -3,18 +3,14 @@
 import { ref, provide, reactive } from 'vue'
 import Hero from './views/Hero/Hero.vue';
 
-import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-onMounted(() => {
-  const entries = performance.getEntriesByType('navigation')
-
-  if (entries.length > 0 && entries[0].type === 'reload') {
-    router.replace('/')
-  }
-})
+if (!sessionStorage.getItem('appLoaded')) {
+  router.replace('/')
+}
+sessionStorage.setItem('appLoaded', 'true')
 
 const bottle = reactive({
   Tappo: 'rosso',
