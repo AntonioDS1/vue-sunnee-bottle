@@ -40,6 +40,7 @@
 .logo {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 8px;
   width: 200px;
   cursor: "pointer";
