@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="logo">
-      <span>Sunnee</span>
+      <a href="https://vue-sunnee-bottle.vercel.app/"><span>Sunnee</span></a>
       <img class="wave" src="../../assets/images/favicon.png">
     </div>
 
