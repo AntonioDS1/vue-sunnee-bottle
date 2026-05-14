@@ -7,10 +7,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-if (!sessionStorage.getItem('appLoaded')) {
-  router.replace('/')
+if (window.location.pathname !== '/') {
+  window.location.href = 'https://vue-sunnee-bottle.vercel.app/'
 }
-sessionStorage.setItem('appLoaded', 'true')
 
 const bottle = reactive({
   Tappo: 'rosso',
