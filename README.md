@@ -21,7 +21,7 @@
     <br />
     <a href="https://github.com/AntonioDS1/vue-sunnee-bottle"><strong>Visita la repository »</strong></a>
     <br />
-    <a href="https://vue-sunnee-bottle-two.vercel.app/"><strong>Visita la demo »</strong></a>
+    <a href="https://vue-sunnee-bottle.vercel.app/"><strong>Visita la demo »</strong></a>
     <br /><br />
     <a href="https://github.com/AntonioDS1/vue-sunnee-bottle/issues">Segnala un Bug</a>
     ·
