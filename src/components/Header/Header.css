@@ -53,6 +53,10 @@
   
 }
 
+.logo-link {
+  width: 300px;
+}
+
 .logo span {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
