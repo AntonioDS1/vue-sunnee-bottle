@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import ThankView from '../views/ThankView/ThankView.vue'
 
 const routes = [
-
   {
     path: '/',
     component: () => import('../views/WelcomeView/WelcomeView.vue')
@@ -13,10 +12,8 @@ const routes = [
   },
   {
     path: '/thank',
-    component: () => import('../views/ThankView/ThankView.vue')
+    component: ThankView
   },
-
-
 ]
 
 export default createRouter({
